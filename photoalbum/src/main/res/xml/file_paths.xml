@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <paths>
+        <root-path
+            name="trevor_camera_file_one"
+            path="." />
+
+        <files-path
+            name="trevor_camera_file_two"
+            path="." />
+
+        <external-path
+            name="trevor_camera_file_three"
+            path="." />
+    </paths>
+</resources>
