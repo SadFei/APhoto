@@ -3,7 +3,7 @@
     <application>
         <activity android:name=".PhotoAlbumActivity"/>
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name=".provider.APhotoFileProvider"
             android:authorities="com.trevor.photoalbum.provider"
             android:exported="false"
             android:grantUriPermissions="true">
