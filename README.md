@@ -9,22 +9,22 @@
 
 * Gradle
 ```
-allprojects {
+	allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
 		}
 	}
   
-implementation 'com.github.SadFei:PhotoAlbum:v1.0'
+	compile 'com.github.SadFei:APhoto:1.0.1'
 ```
 
 * Maven
 ```
-<dependency>
+	<dependency>
 	    <groupId>com.github.SadFei</groupId>
-	    <artifactId>PhotoAlbum</artifactId>
-	    <version>v1.0</version>
+	    <artifactId>APhoto</artifactId>
+	    <version>1.0.1</version>
 	</dependency>
 ```
 
