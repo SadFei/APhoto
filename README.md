@@ -3,8 +3,8 @@
 
 * 说明
 ```
-1、打开相机拍照保存的图片在私有文件夹;文件夹名字为“Trevor”
-2、打开相机拍照后的图片根据当前手机系统版本的不同，会保存为不同格式（level > 14 : WEBP；< 14 JPG）的已压缩图片。
+1、打开相机拍照保存的图片在名字为“Trevor”的文件夹。
+2、打开相机拍照后的图片会保存为“WEBP”格式的已压缩图片。
 ```
 
 * Gradle
@@ -16,15 +16,22 @@
 		}
 	}
   
-	compile 'com.github.SadFei:APhoto:1.0.1'
+	compile 'com.github.SadFei:APhoto:1.0.2'
 ```
 
 * Maven
 ```
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+	
 	<dependency>
 	    <groupId>com.github.SadFei</groupId>
 	    <artifactId>APhoto</artifactId>
-	    <version>1.0.1</version>
+	    <version>1.0.2</version>
 	</dependency>
 ```
 
