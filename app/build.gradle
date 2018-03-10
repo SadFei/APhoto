@@ -34,5 +34,5 @@ dependencies {
 
     compile 'com.yanzhenjie.alertdialog:alertdialog:1.0.1'
     compile 'com.yanzhenjie:permission:2.0.0-rc2'
-    compile 'com.github.SadFei:APhoto:1.0.1'
+    compile 'com.github.SadFei:APhoto:1.0.2'
 }
