@@ -213,9 +213,9 @@ public class PhotoAlbumActivity extends AppCompatActivity {
      */
     private void compress(final File file) {
 
-        Log.e(
+        /*Log.e(
                 PhotoAlbumActivity.class.getSimpleName() + "： 压缩前的大小 - ",
-                "" + file.length());
+                "" + file.length());*/
 
         ThreadProxy.write()
                 .corePoolSize(1)
@@ -252,7 +252,6 @@ public class PhotoAlbumActivity extends AppCompatActivity {
                                 BufferedOutputStream bos = new BufferedOutputStream(
                                         new FileOutputStream(file)
                                 );
-                                //  TODO
                                 bitmap.compress(COMPRESS_FORMAT, 50, bos);
 
                                 bos.flush();
