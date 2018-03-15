@@ -16,7 +16,7 @@
 		}
 	}
   
-	compile 'com.github.SadFei:APhoto:1.0.2'
+	compile 'com.github.SadFei:APhoto:1.0.3'
 ```
 
 * Maven
@@ -53,6 +53,20 @@
 2、打开系统相册
 	PhotoAlbum.with(this)
                 .openPhotoAlbum()
+                .onResult(new ActionResult() {
+                    @Override
+                    public void onFile(File file) {
+                        imageViewTwo.setImageBitmap(BitmapFactory.decodeFile(file.getAbsolutePath()));
+                    }
+                })
+                .start();
+```
+```
+3、设置压缩格式
+	PhotoAlbum.with(this)
+                .openPhotoAlbum()
+		 // 设置压缩格式，不设置默认为 Bitmap.CompressFormat.JPEG
+		.onCompressFormat(Bitmap.CompressFormat.JPEG)
                 .onResult(new ActionResult() {
                     @Override
                     public void onFile(File file) {
