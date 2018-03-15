@@ -3,6 +3,7 @@ package com.trevor.photoalbum;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 
 import com.trevor.photoalbum.machine.MachineEntity;
@@ -66,6 +67,14 @@ public class PhotoAlbum {
          * @return {@link MachineEntity}
          */
         Machine openPhotoAlbum();
+
+        /**
+         * 设置压缩格式; 不设置，默认为 {@link Bitmap.CompressFormat JPEG}
+         *
+         * @param compressFormat {@link Bitmap.CompressFormat}
+         * @return {@link MachineEntity}
+         */
+        Machine onCompressFormat(@NonNull Bitmap.CompressFormat compressFormat);
 
         /**
          * 返回结果

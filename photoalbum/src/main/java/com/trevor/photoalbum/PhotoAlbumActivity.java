@@ -52,7 +52,7 @@ public class PhotoAlbumActivity extends AppCompatActivity {
     /**
      * 文件后缀名
      */
-    private static final String SUFFIX;
+    private static String SUFFIX;
 
     /**
      * 保存图片的名称前缀
@@ -78,27 +78,53 @@ public class PhotoAlbumActivity extends AppCompatActivity {
     /**
      * 压缩格式
      */
-    private static final Bitmap.CompressFormat COMPRESS_FORMAT;
+    private static Bitmap.CompressFormat COMPRESS_FORMAT;
 
-    static {
+//    static {
         /*
          * WEBP 的压缩格式是在 API 14 才提供支持的新的压缩格式，
          * 固 小于14 的手机上运行 JPEG 的压缩格式
          */
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+        /*if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
             COMPRESS_FORMAT = Bitmap.CompressFormat.JPEG;
             SUFFIX = SUFFIX_JPG;
         } else {
             COMPRESS_FORMAT = Bitmap.CompressFormat.WEBP;
             SUFFIX = SUFFIX_WEBP;
-        }
-    }
+        }*/
+//        SUFFIX = SUFFIX_JPG;
+//        COMPRESS_FORMAT = Bitmap.CompressFormat.JPEG;
+//    }
 
     public static void startActivity(Context context, ActivityListener listener) {
         mListener = listener;
+        onStatic();
         Intent intent = new Intent(context, PhotoAlbumActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
+    }
+
+    private static void onStatic() {
+        COMPRESS_FORMAT = mListener.getCompressFormat();
+        if (COMPRESS_FORMAT != null) {
+            switch (COMPRESS_FORMAT) {
+                case PNG:
+                    SUFFIX = SUFFIX_PNG;
+                    break;
+                case JPEG:
+                    SUFFIX = SUFFIX_JPG;
+                    break;
+                case WEBP:
+                    SUFFIX = SUFFIX_WEBP;
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            // 默认为JPG
+            COMPRESS_FORMAT = Bitmap.CompressFormat.JPEG;
+            SUFFIX = SUFFIX_JPG;
+        }
     }
 
     @Override
