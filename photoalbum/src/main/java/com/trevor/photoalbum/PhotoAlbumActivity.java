@@ -158,9 +158,12 @@ public class PhotoAlbumActivity extends AppCompatActivity {
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+
+                    String authority = getApplicationInfo().packageName + ".fileProvider";
                     uri = FileProvider.getUriForFile(
                             this,
-                            "com.trevor.photoalbum.provider",
+//                            "com.trevor.photoalbum.provider",
+                            authority,
                             file);
                 } else {
                     uri = Uri.fromFile(file);
